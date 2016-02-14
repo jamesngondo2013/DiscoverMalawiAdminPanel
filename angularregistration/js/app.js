@@ -31,6 +31,61 @@ myApp.config(['$routeProvider', function($routeProvider) {
         } //current Auth
       } //resolve
     }).
+    when('/lakes', {
+      templateUrl: 'views/lakes.html',
+      controller: 'LakeController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
+    when('/mountains', {
+      templateUrl: 'views/mountains.html',
+      controller: 'MountainsController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
+    when('/historical', {
+      templateUrl: 'views/historical.html',
+      controller: 'HistoricalController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
+    when('/cities', {
+      templateUrl: 'views/cities.html',
+      controller: 'CitiesController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
+     when('/events', {
+      templateUrl: 'views/events.html',
+      controller: 'EventsController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
+     when('/accommodation', {
+      templateUrl: 'views/accommodation.html',
+      controller: 'AccommodationController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
+  
     otherwise({
       redirectTo: '/login'
     });

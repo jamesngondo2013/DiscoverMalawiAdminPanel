@@ -9,6 +9,10 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+.navbar-header{
+  margin-right:20px;
+  width:100%;
+}
 
 body {
   margin: 0;

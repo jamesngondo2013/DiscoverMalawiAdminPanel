@@ -1,5 +1,5 @@
     <div class="panel-heading" style="font-size:large">
-        National Paks and Wildlife Reserves List
+        Accommodation List
     </div>
         
     <div class="branding">
@@ -17,18 +17,20 @@
         
   <form ng-submit="addFormSubmit()" ng-show="addFormShow">
         <input type="text" ng-model="name" placeholder="Name" />
-        <input type="text" ng-model="reknown" placeholder="Location" />
-        <input type="text" ng-model="shortname" placeholder="Short Name" />
-        <input type="text" ng-model="bio" placeholder="Info" />
+        <input type="text" ng-model="location" placeholder="Location" />
+        <input type="text" ng-model="telephone" placeholder="Telephone" />
+        <input type="text" ng-model="email" placeholder="Email" />
+        <input type="text" ng-model="website" placeholder="Website" />
         <input type="text" ng-model="image" placeholder="Image Path" />
         <input type="submit" value="Add Parks" class="btn btn-default btn-success" />
     </form>
 
     <form ng-submit="editFormSubmit()" ng-show="editFormShow">
         <input type="text" ng-model="name" placeholder="Name" />
-        <input type="text" ng-model="reknown" placeholder="Location" />
-        <input type="text" ng-model="shortname" placeholder="Short Name" />
-        <input type="text" ng-model="bio" placeholder="Info" />
+        <input type="text" ng-model="location" placeholder="Location" />
+        <input type="text" ng-model="telephone" placeholder="Telephone" />
+        <input type="text" ng-model="email" placeholder="Email" />
+        <input type="text" ng-model="website" placeholder="Website" />
         <input type="text" ng-model="image" placeholder="Image Path" />
         <input type="submit" value="Edit Park" class="btn btn-default btn-warning" />
     </form>
@@ -38,18 +40,20 @@
             <tr>
                 <td><h3>Name</h3></td>
                 <td><h3>Location</h3></td>
-                <td><h3>Short Name</h3></td>
-                <td><h3>Info</h3></td>
+                <td><h3>Telephone</h3></td>
+                <td><h3>Email</h3></td>
+                <td><h3>Website</h3></td>
                 <td><h3>Image Path</h3></td>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in parks">
+            <tr ng-repeat="item in accommodation">
                 <td>{{ item.name}}</td>
-                <td>{{ item.reknown }}</td>
-                <td>{{ item.shortname }}</td>
-                <td>{{item.bio | limitTo: 50}}</td>
-                <td>{{item.image | limitTo: 15}}</td>
+                <td>{{ item.location }}</td>
+                <td>{{ item.telephone }}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.website}}</td>
+                <td>{{item.image}}</td>
                 
                 <td>
                     <button class="btn btn-primary" ng-click="showPark(item)" >Edit</button>&nbsp;

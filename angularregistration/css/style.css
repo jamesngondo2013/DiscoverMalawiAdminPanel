@@ -460,8 +460,10 @@ nav {
 .branding a:hover {
   color: none;
 }
-
-
+.navbar-header{
+  margin-right:20px;
+  width:100%;
+}
 nav ul {
   width: 60%;
   float: right;

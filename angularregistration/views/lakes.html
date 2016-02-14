@@ -1,8 +1,7 @@
-    <div class="panel-heading" style="font-size:large">
-        National Paks and Wildlife Reserves List
+  <div class="panel-heading" style="font-size:large">
+        Lake Malawi Activities List
     </div>
-        
-    <div class="branding">
+ <div class="branding">
       <ul class="nav nav-pills">
         <li role="presentation" class="active"><a href="#/success">Parks</a></li>
         <li role="presentation"><a href="#/accommodation">Accomodation</a></li>
@@ -13,8 +12,6 @@
         <li role="presentation"><a href="#/mountains">Mountains</a></li>
       </ul>
     </div>
-
-        
   <form ng-submit="addFormSubmit()" ng-show="addFormShow">
         <input type="text" ng-model="name" placeholder="Name" />
         <input type="text" ng-model="reknown" placeholder="Location" />
@@ -44,7 +41,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in parks">
+            <tr ng-repeat="item in lakes">
                 <td>{{ item.name}}</td>
                 <td>{{ item.reknown }}</td>
                 <td>{{ item.shortname }}</td>
