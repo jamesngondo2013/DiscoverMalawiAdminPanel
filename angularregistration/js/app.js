@@ -90,6 +90,15 @@ myApp.config(['$routeProvider', function($routeProvider) {
         } //current Auth
       } //resolve
     }).
+   when('/dictionary', {
+      templateUrl: 'views/dictionary.html',
+      controller: 'DictionaryController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
   
     otherwise({
       redirectTo: '/login'

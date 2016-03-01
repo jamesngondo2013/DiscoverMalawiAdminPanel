@@ -1,5 +1,5 @@
     <div class="panel-heading" style="font-size:large">
-        Events List
+        English Chichewa Phrases
     </div>
         
      <div class="container">
@@ -18,37 +18,28 @@
 
         
   <form ng-submit="addFormSubmit()" ng-show="addFormShow">
-        <input type="text" ng-model="name" placeholder="Name" />
-        <input type="text" ng-model="reknown" placeholder="Location" />
-        <input type="text" ng-model="bio" placeholder="Info" />
-        <input type="text" ng-model="image" placeholder="Image Path" />
+        <input type="text" ng-model="english" placeholder="English" />
+        <input type="text" ng-model="chichewa" placeholder="Chichewa" />
         <input type="submit" value="Add Parks" class="btn btn-default btn-success" />
     </form>
 
     <form ng-submit="editFormSubmit()" ng-show="editFormShow">
-        <input type="text" ng-model="name" placeholder="Name" />
-        <input type="text" ng-model="reknown" placeholder="Location" />
-        <input type="text" ng-model="bio" placeholder="Info" />
-        <input type="text" ng-model="image" placeholder="Image Path" />
+        <input type="text" ng-model="english" placeholder="English" />
+        <input type="text" ng-model="chichewa" placeholder="Chichewa" />
         <input type="submit" value="Edit Park" class="btn btn-default btn-warning" />
     </form>
     <div class="panel panel-body">
         <table class="table">
             <thead>
             <tr>
-                <td><h3>Name</h3></td>
-                <td><h3>Location</h3></td>
-                <td><h3>Info</h3></td>
-                <td><h3>Image Path</h3></td>
+                <td><h3>English</h3></td>
+                <td><h3>Chichewa</h3></td>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in events">
-                <td>{{ item.name}}</td>
-                <td>{{ item.reknown }}</td>
-                <td>{{item.bio | limitTo: 50}}</td>
-                <td>{{item.image | limitTo: 15}}</td>
-                
+            <tr ng-repeat="item in dictionary">
+                <td>{{ item.english}}</td>
+                <td>{{ item.chichewa }}</td>
                 <td>
                     <button class="btn btn-primary" ng-click="showPark(item)" >Edit</button>&nbsp;
                     <button class="btn btn-danger" ng-click="deletePark(item)" >Delete</button>

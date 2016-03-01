@@ -1,6 +1,6 @@
-myApp.controller('EventsController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
-  var myEvents = new Firebase('https://discovermalawi.firebaseio.com/events');
-    $scope.events = $firebaseArray(myEvents);
+myApp.controller('DictionaryController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+  var myDictionary = new Firebase('https://discovermalawi.firebaseio.com/dictionary');
+    $scope.dictionary = $firebaseArray(myDictionary);
     
     //wired to the plus button
     $scope.showForm = function(){
@@ -19,20 +19,16 @@ myApp.controller('EventsController', ['$scope', '$firebaseArray', function($scop
     
     //clearing up the scope of the variables
     function clearForm(){
-        $scope.bio ='';
-        $scope.name='';
-        $scope.reknown='';
-        $scope.image='';
+        $scope.english ='';
+        $scope.chichewa='';
     }
     
     $scope.addFormSubmit = function(){
         
-        $scope.events.$add({
+        $scope.dictionary.$add({
             
-            bio:$scope.bio,
-            name:$scope.name,
-            reknown:$scope.reknown,
-            image:$scope.image
+            english:$scope.english,
+            chichewa:$scope.chichewa
         });
         clearForm();
         
@@ -44,10 +40,8 @@ myApp.controller('EventsController', ['$scope', '$firebaseArray', function($scop
         $scope.addFormShow = false;   //turn on the addForm visibility
         $scope.editFormShow = true;  //turn off the editForm visibility
         
-        $scope.bio = item.bio;
-        $scope.name = item.name;
-        $scope.reknown = item.reknown;
-        $scope.image = item.image;
+        $scope.english = item.english;
+        $scope.chichewa = item.chichewa;
         $scope.id = item.$id;
     }
     
@@ -56,19 +50,17 @@ myApp.controller('EventsController', ['$scope', '$firebaseArray', function($scop
         
         var id = $scope.id; //to keep a reference of the product being edited
         
-        var record = $scope.events.$getRecord(id); //to store the whole park we're editing
-        record.bio = $scope.bio;
-        record.name = $scope.name;
-        record.reknown = $scope.reknown;
-        record.image =$scope.image;
+        var record = $scope.dictionary.$getRecord(id); //to store the whole park we're editing
+        record.english = $scope.english;
+        record.chichewa = $scope.chichewa;
         
-        $scope.events.$save(record); //commit changes to firebase
+        $scope.dictionary.$save(record); //commit changes to firebase
        
     }
    
     //function to delete park
     $scope.deletePark = function(item){
-        $scope.events.$remove(item);
+        $scope.dictionary.$remove(item);
         
     }
     

@@ -22,7 +22,6 @@ myApp.controller('CitiesController', ['$scope', '$firebaseArray', function($scop
         $scope.bio ='';
         $scope.name='';
         $scope.reknown='';
-        $scope.shortname='';
         $scope.image='';
     }
     
@@ -33,7 +32,6 @@ myApp.controller('CitiesController', ['$scope', '$firebaseArray', function($scop
             bio:$scope.bio,
             name:$scope.name,
             reknown:$scope.reknown,
-            shortname:$scope.reknown,
             image:$scope.image
         });
         clearForm();
@@ -49,7 +47,6 @@ myApp.controller('CitiesController', ['$scope', '$firebaseArray', function($scop
         $scope.bio = item.bio;
         $scope.name = item.name;
         $scope.reknown = item.reknown;
-        $scope.shortname = item.shortname;
         $scope.image = item.image;
         $scope.id = item.$id;
     }
@@ -63,7 +60,6 @@ myApp.controller('CitiesController', ['$scope', '$firebaseArray', function($scop
         record.bio = $scope.bio;
         record.name = $scope.name;
         record.reknown = $scope.reknown;
-        record.shortname =$scope.shortname;
         record.image =$scope.image;
         
         $scope.cities.$save(record); //commit changes to firebase

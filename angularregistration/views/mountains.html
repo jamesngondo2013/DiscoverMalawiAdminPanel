@@ -2,23 +2,24 @@
         Mountains List
     </div>
         
-    <div class="branding">
-      <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#/success">Parks</a></li>
-        <li role="presentation"><a href="#/accommodation">Accomodation</a></li>
-        <li role="presentation"><a href="#/cities">Cities </a></li>
-        <li role="presentation"><a href="#/events">Events</a></li>
-        <li role="presentation"><a href="#/historical">Historical</a></li>
-        <li role="presentation"><a href="#/lakes">Lake</a></li>
-        <li role="presentation"><a href="#/mountains">Mountains</a></li>
+      <div class="container">
+      <ul class="nav nav-pills" role="tablist">
+        <li class="active"><a href="#/success">Parks</a></li>
+        <li><a href="#/accommodation">Accomodation</a></li>
+        <li><a href="#/cities">Cities </a></li>
+        <li><a href="#/events">Events</a></li>
+        <li><a href="#/historical">Historical</a></li>
+        <li><a href="#/lakes">Lake</a></li>
+        <li><a href="#/mountains">Mountains</a></li>
+        <li><a href="#/dictionary">Word Phrases</a></li>
       </ul>
     </div>
+
 
         
   <form ng-submit="addFormSubmit()" ng-show="addFormShow">
         <input type="text" ng-model="name" placeholder="Name" />
         <input type="text" ng-model="reknown" placeholder="Location" />
-        <input type="text" ng-model="shortname" placeholder="Short Name" />
         <input type="text" ng-model="bio" placeholder="Info" />
         <input type="text" ng-model="image" placeholder="Image Path" />
         <input type="submit" value="Add Parks" class="btn btn-default btn-success" />
@@ -27,7 +28,6 @@
     <form ng-submit="editFormSubmit()" ng-show="editFormShow">
         <input type="text" ng-model="name" placeholder="Name" />
         <input type="text" ng-model="reknown" placeholder="Location" />
-        <input type="text" ng-model="shortname" placeholder="Short Name" />
         <input type="text" ng-model="bio" placeholder="Info" />
         <input type="text" ng-model="image" placeholder="Image Path" />
         <input type="submit" value="Edit Park" class="btn btn-default btn-warning" />
@@ -38,7 +38,6 @@
             <tr>
                 <td><h3>Name</h3></td>
                 <td><h3>Location</h3></td>
-                <td><h3>Short Name</h3></td>
                 <td><h3>Info</h3></td>
                 <td><h3>Image Path</h3></td>
             </tr>
@@ -47,7 +46,6 @@
             <tr ng-repeat="item in mountains">
                 <td>{{ item.name}}</td>
                 <td>{{ item.reknown }}</td>
-                <td>{{ item.shortname }}</td>
                 <td>{{item.bio | limitTo: 50}}</td>
                 <td>{{item.image | limitTo: 15}}</td>
                 
