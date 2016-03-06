@@ -99,6 +99,24 @@ myApp.config(['$routeProvider', function($routeProvider) {
         } //current Auth
       } //resolve
     }).
+   when('/travel', {
+      templateUrl: 'views/travel.html',
+      controller: 'TravelAgentsController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
+   when('/about', {
+      templateUrl: 'views/about.html',
+      controller: 'AboutController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        } //current Auth
+      } //resolve
+    }).
   
     otherwise({
       redirectTo: '/login'

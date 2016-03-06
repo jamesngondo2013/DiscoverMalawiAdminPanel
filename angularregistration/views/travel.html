@@ -1,5 +1,5 @@
     <div class="panel-heading" style="font-size:large">
-        Accommodation List
+        Travel Agents List
     </div>
         
       <div class="container">
@@ -25,8 +25,7 @@
         <input type="text" ng-model="telephone" placeholder="Telephone" />
         <input type="text" ng-model="email" placeholder="Email" />
         <input type="text" ng-model="website" placeholder="Website" />
-        <input type="text" ng-model="image" placeholder="Image Path" />
-        <input type="submit" value="Add Accommodation" class="btn btn-default btn-success" />
+        <input type="submit" value="Add Travel Agent" class="btn btn-default btn-success" />
     </form>
 
     <form ng-submit="editFormSubmit()" ng-show="editFormShow">
@@ -35,8 +34,7 @@
         <input type="text" ng-model="telephone" placeholder="Telephone" />
         <input type="text" ng-model="email" placeholder="Email" />
         <input type="text" ng-model="website" placeholder="Website" />
-        <input type="text" ng-model="image" placeholder="Image Path" />
-        <input type="submit" value="Edit Accommodation" class="btn btn-default btn-warning" />
+        <input type="submit" value="Edit Travel Agent" class="btn btn-default btn-warning" />
     </form>
     <div class="panel panel-body">
         <table class="table">
@@ -47,17 +45,15 @@
                 <td><h3>Telephone</h3></td>
                 <td><h3>Email</h3></td>
                 <td><h3>Website</h3></td>
-                <td><h3>Image Path</h3></td>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in accommodation">
+            <tr ng-repeat="item in travel">
                 <td>{{ item.name}}</td>
                 <td>{{ item.location }}</td>
                 <td>{{ item.telephone }}</td>
                 <td>{{item.email}}</td>
                 <td>{{item.website}}</td>
-                <td>{{item.image}}</td>
                 
                 <td>
                     <button class="btn btn-primary" ng-click="showPark(item)" >Edit</button>&nbsp;

@@ -4,7 +4,8 @@
         
      <div class="container">
       <ul class="nav nav-pills" role="tablist">
-        <li class="active"><a href="#/success">Parks</a></li>
+        <li class="active"><a href="#/about">About</a></li>
+        <li ><a href="#/success">Parks</a></li>
         <li><a href="#/accommodation">Accomodation</a></li>
         <li><a href="#/cities">Cities </a></li>
         <li><a href="#/events">Events</a></li>
@@ -12,6 +13,7 @@
         <li><a href="#/lakes">Lake</a></li>
         <li><a href="#/mountains">Mountains</a></li>
         <li><a href="#/dictionary">Word Phrases</a></li>
+        <li><a href="#/travel">Agents</a></li>
       </ul>
     </div>
 
@@ -20,13 +22,13 @@
   <form ng-submit="addFormSubmit()" ng-show="addFormShow">
         <input type="text" ng-model="english" placeholder="English" />
         <input type="text" ng-model="chichewa" placeholder="Chichewa" />
-        <input type="submit" value="Add Parks" class="btn btn-default btn-success" />
+        <input type="submit" value="Add Dictionary" class="btn btn-default btn-success" />
     </form>
 
     <form ng-submit="editFormSubmit()" ng-show="editFormShow">
         <input type="text" ng-model="english" placeholder="English" />
         <input type="text" ng-model="chichewa" placeholder="Chichewa" />
-        <input type="submit" value="Edit Park" class="btn btn-default btn-warning" />
+        <input type="submit" value="Edit Dictionary" class="btn btn-default btn-warning" />
     </form>
     <div class="panel panel-body">
         <table class="table">

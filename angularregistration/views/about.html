@@ -1,8 +1,8 @@
     <div class="panel-heading" style="font-size:large">
-        Cities List
+        About Lake Malawi
     </div>
         
-     <div class="container">
+      <div class="container">
       <ul class="nav nav-pills" role="tablist">
         <li class="active"><a href="#/about">About</a></li>
         <li ><a href="#/success">Parks</a></li>
@@ -17,46 +17,51 @@
       </ul>
     </div>
 
+
         
-  <form ng-submit="addFormSubmit()" ng-show="addFormShow">
-        <input type="text" ng-model="name" placeholder="Name" />
-        <input type="text" ng-model="reknown" placeholder="Location" />
-        <input type="text" ng-model="bio" placeholder="Info" />
+    <form ng-submit="addFormSubmit()" ng-show="addFormShow">
+       <input type="text" ng-model="info" placeholder="Info" />
+        <input type="text" ng-model="geography" placeholder="Geography" />
+        <input type="text" ng-model="lake" placeholder="Lake" />
+        <input type="text" ng-model="language" placeholder="Language" />
         <input type="text" ng-model="image" placeholder="Image Path" />
-        <input type="submit" value="Add Cities" class="btn btn-default btn-success" />
+        <input type="submit" value="Add About" class="btn btn-default btn-success" />
     </form>
 
     <form ng-submit="editFormSubmit()" ng-show="editFormShow">
-        <input type="text" ng-model="name" placeholder="Name" />
-        <input type="text" ng-model="reknown" placeholder="Location" />
-        <input type="text" ng-model="bio" placeholder="Info" />
+        <input type="text" ng-model="info" placeholder="Info" />
+        <input type="text" ng-model="geography" placeholder="Geography" />
+        <input type="text" ng-model="lake" placeholder="Lake" />
+        <input type="text" ng-model="language" placeholder="Language" />
         <input type="text" ng-model="image" placeholder="Image Path" />
-        <input type="submit" value="Edit Cities" class="btn btn-default btn-warning" />
+        <input type="submit" value="Edit About" class="btn btn-default btn-warning" />
     </form>
     <div class="panel panel-body">
         <table class="table">
             <thead>
             <tr>
-                <td><h3>Name</h3></td>
-                <td><h3>Location</h3></td>
                 <td><h3>Info</h3></td>
+                <td><h3>Geography</h3></td>
+                <td><h3>Lake</h3></td>
+                <td><h3>Language</h3></td>
                 <td><h3>Image Path</h3></td>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in cities">
-                <td>{{ item.name}}</td>
-                <td>{{ item.reknown }}</td>
-                <td>{{item.bio | limitTo: 50}}</td>
-                <td>{{item.image | limitTo: 15}}</td>
+            <tr ng-repeat="item in about">
+                <td>{{ item.info}}</td>
+                <td>{{ item.geography }}</td>
+                <td>{{ item.lake }}</td>
+                <td>{{item.language}}</td>
+                <td>{{item.image}}</td>
                 
                 <td>
                     <button class="btn btn-primary" ng-click="showPark(item)" >Edit</button>&nbsp;
-                    <button class="btn btn-danger" ng-click="deletePark(item)" >Delete</button>
+
                 </td>
             </tr>
             </tbody>
         </table>
-        <button class="btn btn-success" ng-click="showForm()" ng-hide="addFormShow">Add New</button>
-        <button class="btn btn-warning" ng-click="hideForm()" ng-show="addFormShow">Minimize</button>
+       
+        
     </div>
