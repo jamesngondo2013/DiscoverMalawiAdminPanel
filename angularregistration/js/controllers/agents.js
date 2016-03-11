@@ -24,24 +24,28 @@ myApp.controller('TravelAgentsController', ['$scope', '$firebaseArray', function
         $scope.telephone='';
         $scope.email='';
         $scope.website='';
+        $scope.image='';
     }
     
-    $scope.addFormSubmit = function(){
+    $scope.addFormSubmit = function(isValid){
         
+    if (isValid){
         $scope.travel.$add({
             
             name:$scope.name,
             location:$scope.location,
             telephone:$scope.telephone,
             email:$scope.email,
-            website:$scope.website
+            website:$scope.website,
+            image:$scope.image
         });
         clearForm();
+    }
         
     }//$scope
     
     //function to handle the edit button by pulling data based on id
-    $scope.showPark = function(item){
+    $scope.showTravel = function(item){
         
         $scope.addFormShow = false;   //turn on the addForm visibility
         $scope.editFormShow = true;  //turn off the editForm visibility
@@ -51,6 +55,7 @@ myApp.controller('TravelAgentsController', ['$scope', '$firebaseArray', function
         $scope.telephone = item.telephone;
         $scope.email = item.email;
         $scope.website = item.website;
+        $scope.image = item.image;
         $scope.id = item.$id;
     }
     
@@ -65,14 +70,15 @@ myApp.controller('TravelAgentsController', ['$scope', '$firebaseArray', function
         record.telephone = $scope.telephone;
         record.email =$scope.email;
         record.website =$scope.website;
-        
+        record.image =$scope.image;
         $scope.travel.$save(record); //commit changes to firebase
+        clearForm();
        
        
     }
    
-    //function to delete park
-    $scope.deletePark = function(item){
+    //function to delete travel
+    $scope.deleteTravel = function(item){
        $scope.travel.$remove(item);
         
     }

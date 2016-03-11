@@ -25,8 +25,9 @@ myApp.controller('CitiesController', ['$scope', '$firebaseArray', function($scop
         $scope.image='';
     }
     
-    $scope.addFormSubmit = function(){
+    $scope.addFormSubmit = function(isValid){
         
+    if(isValid){
         $scope.cities.$add({
             
             bio:$scope.bio,
@@ -35,11 +36,12 @@ myApp.controller('CitiesController', ['$scope', '$firebaseArray', function($scop
             image:$scope.image
         });
         clearForm();
+    }
         
     }//$scope
     
     //function to handle the edit button by pulling data based on id
-    $scope.showPark = function(item){
+    $scope.showCity = function(item){
         
         $scope.addFormShow = false;   //turn on the addForm visibility
         $scope.editFormShow = true;  //turn off the editForm visibility
@@ -63,11 +65,12 @@ myApp.controller('CitiesController', ['$scope', '$firebaseArray', function($scop
         record.image =$scope.image;
         
         $scope.cities.$save(record); //commit changes to firebase
+        clearForm();
        
     }
    
-    //function to delete park
-    $scope.deletePark = function(item){
+    //function to delete city
+    $scope.deleteCity = function(item){
         $scope.cities.$remove(item);
         
     }

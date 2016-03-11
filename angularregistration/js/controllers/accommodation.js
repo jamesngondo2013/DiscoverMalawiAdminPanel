@@ -27,8 +27,9 @@ myApp.controller('AccommodationController', ['$scope', '$firebaseArray', functio
         $scope.image='';
     }
     
-    $scope.addFormSubmit = function(){
+    $scope.addFormSubmit = function(isValid){
         
+    if(isValid){
         $scope.accommodation.$add({
             
             name:$scope.name,
@@ -39,6 +40,7 @@ myApp.controller('AccommodationController', ['$scope', '$firebaseArray', functio
             image:$scope.image
         });
         clearForm();
+    }
         
     }//$scope
     
@@ -71,6 +73,7 @@ myApp.controller('AccommodationController', ['$scope', '$firebaseArray', functio
         record.image =$scope.image;
         
         $scope.accommodation.$save(record); //commit changes to firebase
+        clearForm();
        
     }
    

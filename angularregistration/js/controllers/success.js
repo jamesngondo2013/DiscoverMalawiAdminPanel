@@ -25,16 +25,21 @@ myApp.controller('SuccessController', ['$scope', '$firebaseArray', function($sco
         $scope.image='';
     }
     
-    $scope.addFormSubmit = function(){
+    $scope.addFormSubmit = function(isValid){
         
-        $scope.parks.$add({
+        if (isValid)
+        {
             
-            bio:$scope.bio,
-            name:$scope.name,
-            reknown:$scope.reknown,
-            image:$scope.image
-        });
-        clearForm();
+            $scope.parks.$add({
+                bio:$scope.bio,
+                name:$scope.name,
+                reknown:$scope.reknown,
+                image:$scope.image
+            });
+            clearForm();
+        }
+        $scope.submitted = true;
+        
         
     }//$scope
     
@@ -54,22 +59,27 @@ myApp.controller('SuccessController', ['$scope', '$firebaseArray', function($sco
     //function to handle actual update to the firebase db after edit
     $scope.editFormSubmit = function(){
         
-        var id = $scope.id; //to keep a reference of the product being edited
-        
-        var record = $scope.parks.$getRecord(id); //to store the whole park we're editing
-        record.bio = $scope.bio;
-        record.name = $scope.name;
-        record.reknown = $scope.reknown;
-        record.image =$scope.image;
-        
-        $scope.parks.$save(record); //commit changes to firebase
+    // if (isValid)
+     // {
+            //alert('Done');
+            var id = $scope.id; //to keep a reference of the product being edited
+
+            var record = $scope.parks.$getRecord(id); //to store the whole park we're editing
+            record.bio = $scope.bio;
+            record.name = $scope.name;
+            record.reknown = $scope.reknown;
+            record.image =$scope.image;
+
+            $scope.parks.$save(record); //commit changes to firebase
+            clearForm();
+      //}
        
     }
    
     //function to delete park
     $scope.deletePark = function(item){
         $scope.parks.$remove(item);
-        
+
     }
     
 }]);
