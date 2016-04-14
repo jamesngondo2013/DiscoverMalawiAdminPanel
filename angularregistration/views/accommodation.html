@@ -1,5 +1,7 @@
 <div>
-    <a ng-href="#/register" class="btn btn-success pull-right">Register New user</a> 
+    <button class="btn btn-success pull-right" ng-click="showForm()" ng-hide="addFormShow">Add New Record</button>
+    <button class="btn btn-warning pull-right" ng-click="hideForm()" ng-show="addFormShow">Hide Form</button>
+    <a ng-href="#/register" class="btn btn-warning pull-right">Register New user</a> 
 </div>
 
 <div style="font-size:large">
@@ -106,8 +108,7 @@
                  <td>
                     <button class="btn btn-primary" ng-click="showPark(item)" >Edit</button>&nbsp;
                     <button class="btn btn-danger" ng-click="deletePark(item)" >Delete</button>
-                    <button class="btn btn-success" ng-click="showForm()" ng-hide="addFormShow">Add New</button>
-                    <button class="btn btn-warning" ng-click="hideForm()" ng-show="addFormShow">Hide Form</button>
+                   
                 </td>
             </tr>
             </tbody>

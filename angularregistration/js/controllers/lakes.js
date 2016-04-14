@@ -69,7 +69,7 @@ myApp.controller('LakeController', ['$scope', '$firebaseArray', function($scope,
        
     }
    
-    //function to delete park
+    //function to delete lake
     $scope.deleteLakes = function(item){
         $scope.lakes.$remove(item);
         
